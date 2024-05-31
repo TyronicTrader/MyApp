@@ -1,0 +1,113 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:MyAppName.ViewModels"
+             xmlns:image="clr-namespace:MyAppName.Assets.Images"
+             x:Class="MyAppName.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Purple">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="55"/>
+            </Grid.ColumnDefinitions >
+            <Grid Grid.Column="0">
+                <Label Content="{Binding Caption}" FontSize="20" Foreground="{StaticResource ForegroundColorBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"   />
+            </Grid>        
+            <Grid Grid.Column="1">
+                <Label Foreground="{StaticResource ForegroundColorBrush}" >
+                     <Image Source="{SvgImage /Assets/Images/Logo.svg}" Width="50" Height="50"  />
+                </Label>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="55"/>
+            </Grid.ColumnDefinitions >
+
+            <Grid Grid.Column="0"  >
+                <ContentControl Content="{Binding CurrentChildView}" Grid.Row="1" Margin="10" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <StackPanel Name="RightTopButtonMenu" VerticalAlignment="Top"   Background="Transparent"   >
+                
+                    <StackPanel.Styles>
+                        <Style Selector="Border:pointerover">
+                                <Setter Property="RenderTransform" Value="translateX(-10px)" />
+                                <Setter Property="Background" Value="Purple" />
+                        </Style>     
+                    </StackPanel.Styles>
+                    <Border>
+                        <Button x:Name="Dashboard" Command="{Binding ExecuteShowDashboardViewCommand}"   Background="Purple"   >
+                            <Image Source="{SvgImage /Assets/Images/Logo.svg}" Width="35" Height="35"  />
+                        </Button>
+                    </Border>
+                    <Border>
+                        <Button x:Name="Journal" Command="{Binding ExecuteShowJournalViewCommand}"   Background="Purple"      >
+                            <Image Source="{SvgImage /Assets/Images/calendar-clock.svg}" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+                    <Border>
+                        <Button x:Name="Metrics" Command="{Binding ExecuteShowMetricsViewCommand}"  Background="Purple"      > 
+                            <Image Source="{SvgImage /Assets/Images/graph.svg}" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+                    <Border>
+                        <Button x:Name="Events" Command="{Binding ExecuteShowEventsViewCommand}"   Background="Purple"     >
+                            <Image Source="{SvgImage /Assets/Images/alert.svg}" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+                    <Border>
+                        <Button x:Name="RSS" Command="{Binding ExecuteShowRSSViewCommand}"   Background="Purple"     >
+                            <Image Source="{SvgImage /Assets/Images/rss.svg}" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+                    <Border>
+                        <Button x:Name="Search" Command="{Binding ExecuteShowSearchViewCommand}"   Background="Purple"     >
+                            <Image Source="{SvgImage /Assets/Images/search.svg}" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+
+                </StackPanel>
+
+
+
+                <StackPanel Name="RightBottomButtonMenu"  VerticalAlignment="Bottom"    Background="Transparent"   >
+                    <StackPanel.Styles>
+                        <Style Selector="Border:pointerover">
+                                <Setter Property="RenderTransform" Value="translateX(-10px)" />
+                                <Setter Property="Background" Value="Purple" />
+                        </Style>            
+                    </StackPanel.Styles>
+                    <Border>
+                        <Button x:Name="Settings"  Command="{Binding ExecuteShowSettingsViewCommand}"   Background="Purple"     >
+                            <Image Source="{SvgImage /Assets/Images/settings.svg}" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+                    <Border>
+                        <Button x:Name="Info" Command="{Binding ExecuteShowInfoViewCommand}" VerticalAlignment="Bottom"   Background="Purple"     >
+                            <Image Source="{SvgImage /Assets/Images/Logo.svg}" Stretch="Uniform" Width="35" Height="35" />
+                        </Button>
+                    </Border>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

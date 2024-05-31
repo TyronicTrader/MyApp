@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 800 800"
+   version="1.1"
+   id="svg2590"
+   sodipodi:docname="Logo.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2592"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.914906"
+     inkscape:cx="409.33167"
+     inkscape:cy="447.58697"
+     inkscape:window-width="1444"
+     inkscape:window-height="1236"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2587">
+    <rect
+       x="208.59831"
+       y="249.01424"
+       width="42.941873"
+       height="43.636053"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-55.157056,-99.080738)">
+    <text
+       xml:space="preserve"
+       transform="matrix(13.718802,0,0,14.065752,-2689.5711,-3325.8243)"
+       id="text1"
+       style="white-space:pre;shape-inside:url(#rect1);shape-padding:0;display:inline;fill:#cecece;stroke-width:1.562;paint-order:markers stroke fill"
+       inkscape:transform-center-x="4.0246773"
+       inkscape:transform-center-y="-36.34891"><tspan
+         x="208.59766"
+         y="259.93217"
+         id="tspan4356">Simple
+</tspan><tspan
+         x="208.59766"
+         y="274.93217"
+         id="tspan4358">Trading
+</tspan><tspan
+         x="208.59766"
+         y="289.93217"
+         id="tspan4360">Journal</tspan></text>
+  </g>
+</svg>
