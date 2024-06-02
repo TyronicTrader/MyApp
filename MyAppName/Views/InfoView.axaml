@@ -3,6 +3,75 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MyAppName.InfoView">
-  Welcome to Avalonia!
+             xmlns:vm="clr-namespace:MyAppName.ViewModels"
+             xmlns:controls="clr-namespace:MyAppName.Views"
+             x:Class="MyAppName.Views.InfoView"
+             x:DataType="vm:InfoViewModel">
+
+
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"   >
+
+                  <StackPanel.Styles>
+                    <!-- <Style Selector="Border">
+                      <Setter Property="Transitions">
+                        <Transitions>
+                          <BrushTransition Property="Background" Duration="0:0:0.5" />
+                        </Transitions>
+                      </Setter>
+                      <Setter Property="Background" >
+                        <RadialGradientBrush Center="50%,50%" Radius="0.5">
+                          <GradientStop Offset="0" Color="Red"/>
+                          <GradientStop Offset="1" Color="Blue"/>
+                        </RadialGradientBrush>
+                      </Setter>
+                    </Style>
+
+                    <Style Selector="Border:pointerover">
+                      <Setter Property="Background" >
+                        <RadialGradientBrush Center="30%,30%" Radius="0.2">
+                          <GradientStop Offset="0" Color="Green"/>
+                          <GradientStop Offset="1" Color="Yellow"/>
+                        </RadialGradientBrush>
+                      </Setter>
+                    </Style> -->
+
+                    <Style Selector="Border">
+                        <Setter Property="Background" Value="Purple"/>
+                        <Setter Property="Transitions">
+                        <Transitions>
+                            <CornerRadiusTransition Property="CornerRadius" Duration="0:0:0.75" />
+                        </Transitions>
+                        </Setter>
+                    </Style>
+
+                    <Style Selector="Border:pointerover">
+                        <Setter Property="CornerRadius" Value="50" />
+                    </Style>          
+                  </StackPanel.Styles>
+
+            <Label Content="{Binding AppName}" FontSize="20" Foreground="{StaticResource ForegroundColorBrush}" HorizontalAlignment="Center" Padding="21"/>
+            <Label Content="{Binding DevName}" FontSize="20" Foreground="{StaticResource ForegroundColorBrush}" HorizontalAlignment="Center" />
+            <Label Content="Please support me using the following:" FontSize="20" Foreground="{StaticResource ForegroundColorBrush}" HorizontalAlignment="Center" />
+            <Border>
+            <Button x:Name="devCrypto" Content="{Binding DevCrypto}" Command="{Binding CopyCryptoToClipboardCommand}" HorizontalAlignment="Center" Background="Transparent" />
+            </Border>
+            <Button x:Name="devPayPal" Content="{Binding DevPaypal}" Command="{Binding OpenThePayPalHyperlinkCommand}" HorizontalAlignment="Center"  Background="Transparent" />
+            <Border>
+            <Button x:Name="devPatreon" Content="{Binding DevPatreon}" Command="{Binding OpenThePatreonHyperlinkCommand}" HorizontalAlignment="Center" Background="Transparent"  />
+            </Border>
+
+            
+
+
+
+
+        </StackPanel>
+
+    </Grid>
+
+
+
+
 </UserControl>

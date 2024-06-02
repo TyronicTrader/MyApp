@@ -24,56 +24,56 @@ public partial class MainViewModel : ViewModelBase
         [RelayCommand]
         internal void ExecuteShowDashboardView()
         {
-            CurrentChildView = new MyUserControlViewModel();
+            CurrentChildView = new DashboardViewModel();
             Caption = "Dashboard";
         }
 
         [RelayCommand]
         internal void ExecuteShowJournalView()
         {
-            CurrentChildView = new MainViewModel();
+            CurrentChildView = new JournalViewModel();
             Caption = "Journal";
         }
 
         [RelayCommand]
         internal void ExecuteShowMetricsView()
         {
-            CurrentChildView = new MyUserControlViewModel();
+            CurrentChildView = new MetricsViewModel();
             Caption = "Metrics";
         }
 
         [RelayCommand]
         internal void ExecuteShowEventsView() 
         {
-            CurrentChildView = new MainViewModel();
+            CurrentChildView = new EventsViewModel();
             Caption = "Events";
         }
 
         [RelayCommand]
         internal void ExecuteShowRSSView()
         {
-            CurrentChildView = new MyUserControlViewModel();
+            CurrentChildView = new RSSViewModel();
             Caption = "RSS";
         }
 
         [RelayCommand]
         internal void ExecuteShowSearchView()
         {
-            CurrentChildView = new MainViewModel();
+            CurrentChildView = new SearchViewModel();
             Caption = "Search";
         }
 
         [RelayCommand]
         internal void ExecuteShowSettingsView()
         {
-            CurrentChildView = new MyUserControlViewModel();
+            CurrentChildView = new SettingsViewModel();
             Caption = "Settings"; 
         }
 
         [RelayCommand]
         internal void ExecuteShowInfoView()
         {
-            CurrentChildView = new MainViewModel();
+            CurrentChildView = new InfoViewModel();
             Caption = "Info";
         }
 }

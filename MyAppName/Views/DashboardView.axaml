@@ -3,6 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MyAppName.DashboardView">
-  Welcome to Avalonia!
+             xmlns:vm="clr-namespace:MyAppName.ViewModels"
+             xmlns:controls="clr-namespace:MyAppName.Views"
+             x:Class="MyAppName.Views.DashboardView"
+             x:DataType="vm:DashboardViewModel">
+  Welcome to the Dashboard!
 </UserControl>

@@ -2,7 +2,134 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MyAppName.JournalView">
-  Welcome to Avalonia!
+             mc:Ignorable="d" d:DesignMinWidth="1205" d:DesignMinHeight="635"
+             xmlns:vm="clr-namespace:MyAppName.ViewModels"
+             xmlns:controls="clr-namespace:MyAppName.Views"
+             x:Class="MyAppName.Views.JournalView"
+             MinHeight="635" MinWidth="1215"
+             x:DataType="vm:JournalViewModel">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>-->
+
+        <!--<GridSplitter Grid.Column ="0" Width="5" HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="Blue" />-->
+        
+        <StackPanel Grid.Column="0">
+            <Calendar Height="335" HorizontalAlignment="Left" Margin="8,5,0,10" x:Name="calendar1" VerticalAlignment="Top" Width="295" FontSize="2"  >
+                <Calendar.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Blue" Offset="0" />
+                        <GradientStop Color="Red" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Calendar.BorderBrush>
+                <Calendar.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Blue" Offset="0.1" />
+                        <GradientStop Color="Orange" Offset="0.25" />
+                        <GradientStop Color="Green" Offset="0.75" />
+                        <GradientStop Color="Red" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Calendar.Background>
+                <Calendar.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Black" Offset="0.25" />
+                        <GradientStop Color="Green" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Calendar.Foreground>
+            </Calendar>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+             <TextBox x:Name="theTextBox2" Text="{Binding TheTextBox}" />
+             <Image Source="{SvgImage /Assets/Images/Dashboard.svg}" Width="50" Height="50"  />
+             <Image Source="{SvgImage /Assets/Images/Logo.svg}" Width="50" Height="50"  />
+             <Image Source="{SvgImage /Assets/Images/rss.svg}" Width="50" Height="50"  />     
+            
+        </StackPanel>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="1" >
+              
+
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                        <Label Name="lblToolbarTemplate" Content="Template:" />
+                        <ComboBox Name="cmbToolbarTemplate" MinWidth="140" />
+                        <Separator Margin="5,0,5,0"/>
+                        <Button Name="btnToolbarUndo" MaxWidth="40" >
+                          <Image Source="{SvgImage /Assets/Images/undo.svg}"   />
+                        </Button>
+                        <Button Name="btnToolbarRedo" MaxWidth="40" >
+                          <Image Source="{SvgImage /Assets/Images/redo.svg}"  />
+                        </Button>
+                        <Separator Margin="5,0,5,0"/>
+                        <Button Name="btnToolbarCut" MaxWidth="40" >
+                          <Image Source="{SvgImage /Assets/Images/cut.svg}"  />
+                        </Button>
+                        <Button Name="btnToolbarCopy" MaxWidth="40" >
+                          <Image Source="{SvgImage /Assets/Images/copy.svg}"  />
+                        </Button>
+                        <Button Name="btnToolbarPaste" MaxWidth="40" >
+                          <Image Source="{SvgImage /Assets/Images/paste.svg}"  />
+                        </Button>
+                        <Separator Margin="5,0,5,0"/>
+                        <Button x:Name="btnToolbarTimeStamp" MaxWidth="40" Command="{Binding AddDTCommand}" >
+                          <Image Source="{SvgImage /Assets/Images/settings.svg}"   />
+                        </Button>
+                        <Separator Margin="5,0,5,0"/>
+                        <Button Name="btnToolbarChangeOrientation" MaxWidth="40" HorizontalAlignment="Right" >
+                          <Image Source="{SvgImage /Assets/Images/orientation.svg}"   />
+                        </Button>
+                </StackPanel>
+                <TextBox x:Name="RichTextBox1" MinHeight="33" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding RichTextBox}"  />
+                </StackPanel>
+
+
+                    
+            <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="5" Background="White" ResizeDirection="Rows"/>
+            <StackPanel Grid.Row="2" Grid.Column="0" >
+              
+                          <Image Source="{SvgImage /Assets/Images/placeholder.svg}" Stretch="Uniform"  />
+            </StackPanel>
+
+        </Grid>
+        
+
+        <StackPanel Grid.Column="3">
+            <!-- <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoThinest}" />
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoThinestItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoThiner}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoThinerItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoThin}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoThinItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoRegular}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoRegularItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoMedium}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoMediumItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoSemiBold}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoSemiBoldItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoBold}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoBoldItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoBolder}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoBolderItalic}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoBoldest}"/>
+            <TextBlock Text="{Binding TheTextBox}" FontSize="12" Foreground="White" HorizontalAlignment="Center" FontFamily="{StaticResource LatoBoldestItalic}"/>             -->
+            
+        </StackPanel>
+    </Grid>
+
+
+
 </UserControl>
