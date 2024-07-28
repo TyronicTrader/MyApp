@@ -17,7 +17,7 @@ public partial class InfoViewModel : ViewModelBase
     private string devName = "Developer";
 
     [ObservableProperty]
-    private string devCrypto = "placeholder12309487oiqjfoklajsdfasdfkjhjkhuwe";
+    private string devCrypto = "placeholder12309487oiqjfoklajsasdfkjhjkhuwe";
 
     [ObservableProperty]
     private string devPatreon = "https://www.patreon.com";
